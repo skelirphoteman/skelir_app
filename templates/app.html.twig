@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skelir Trade</title>
+    {{ encore_entry_link_tags('appScss') }}
+</head>
+<body>
+<div class="container py-4 px-3 mx-auto">
+    <div id="urls"
+         data-path="{{ path('api_candlestick') }}"></div>
+
+
+    <canvas id="line-chart" width="800" height="450"></canvas>
+</div>
+    {{ encore_entry_script_tags('app') }}
+</body>
+</html>
