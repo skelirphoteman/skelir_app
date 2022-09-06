@@ -6,14 +6,11 @@
     <title>Skelir Trade</title>
     {{ encore_entry_link_tags('appScss') }}
 </head>
-<body>
-<div class="container py-4 px-3 mx-auto">
-    <div id="urls"
-         data-path="{{ path('api_candlestick') }}"></div>
-
-
-    <canvas id="line-chart" width="800" height="450"></canvas>
-</div>
+    <body>
+    <div id="vue-app">
+        {# L'appli Vue.js vivra ici #}
+    </div>
     {{ encore_entry_script_tags('app') }}
-</body>
+
+    </body>
 </html>

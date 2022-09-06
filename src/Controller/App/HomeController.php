@@ -32,20 +32,16 @@ class HomeController extends AbstractController
      */
     public function getExchangeInformation(Request $request, BinanceConnectionService $binanceConnectionService)
     {
-        $apiKey = "Xt1G63ief3w9uQCcZt1HNNZ7uckzur9GEj2Kvl2d04ChzzvhaSMYgDnuVHztTCxy";
-        $scret  = "lvCb7AlTqeD54Wc5V4IGXMvQbZUbBz29O0o5oE2fOkbYgBvBRBaE1Q4vXBdW0Dku";
-
-        $binanceConnectionService->initialize($apiKey, $scret);
-
-        $datas  = $binanceConnectionService->getPairInformations("BTCUSDT", BinanceConnectionService::FIVE_MINUTES, '12');
+        $datas  = $binanceConnectionService->getPairInformations("BTCUSDT", '1w', '12');
 
         $response = [];
 
         /** @var Candlestick $data */
         foreach ($datas as $data){
             $response[] = [
-                'open'  => $data->getOpenPrice(),
-                'close' => $data->getClosePrice(),
+                'startAt'  => $data->getOpenTime()->format('d-m-Y'),
+                'open'      => $data->getOpenPrice(),
+                'close'     => $data->getClosePrice(),
             ];
         }
         return new JsonResponse($response);
