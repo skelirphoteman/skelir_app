@@ -24,7 +24,9 @@ class HomeController extends AbstractController
      */
     public function index(Request $request, BinanceConnectionService $binanceConnectionService)
     {
-        return $this->render('app.html.twig');
+        return $this->render('app.html.twig', [
+            'vueComponent'  => 'Index'
+        ]);
     }
 
     /**

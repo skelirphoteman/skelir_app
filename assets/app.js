@@ -11,7 +11,7 @@
 import Chart from 'chart.js/auto';
 
 const $ = require('jquery');
-import { createApp, Vue } from 'vue';
+import { createApp } from 'vue';
 import App from './App/App.vue';
 
 createApp(App).mount('#vue-app');
