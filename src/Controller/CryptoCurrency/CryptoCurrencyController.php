@@ -18,6 +18,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class CryptoCurrencyController extends AbstractController
 {
     /**
+     *
+     * Render CryptoCurrencyPage
+     *
      * @Route("/", "crypto_currency", methods={"GET"})
      * @return Response
      *
@@ -30,6 +33,9 @@ class CryptoCurrencyController extends AbstractController
     }
 
     /**
+     *
+     * Return cryptoCurrency list
+     *
      * @Route("/list", "crypto_currency_list", methods={"GET"})
      * @return JsonResponse
      */
