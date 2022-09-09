@@ -1,6 +1,6 @@
 <template>
   <li class="nav-item active">
-    <a class="nav-link" href="{{ href }}">
+    <a class="nav-link" :href="href">
       {{ name }}
     </a>
   </li>

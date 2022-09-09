@@ -51,7 +51,8 @@ class GenerateJsonPathCommand extends Command
             $groupProgressBar->advance();
             $module = explode('/', $route->getPath(), 3);
 
-            $routesArray[$module[1]][] = [
+            $routesArray[$module[1]][$name] = [
+                'name'  => $name,
                 'path'  => $route->getPath(),
             ];
         }
