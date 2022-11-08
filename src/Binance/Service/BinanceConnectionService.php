@@ -97,4 +97,24 @@ class BinanceConnectionService
 
         return $candlesticks;
     }
+
+    /**
+     * @param string $pair
+     */
+    public function getPrice(
+        string $pair
+    ) : ?float
+    {
+        $response = $this->client->request(
+            'GET',
+            BinanceConnectionService::URL . '/api/v3/ticker/price?symbol=' . $pair,
+        )->toArray();
+
+        if(array_key_exists('price', $response)){
+            return (float) $response['price'];
+        }
+
+
+        return null;
+    }
 }

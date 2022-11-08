@@ -6,12 +6,14 @@
     <title>Skelir Trade</title>
     <script>
         window.mainComponent  = '{{ vueComponent }}';
+        {% if datas is defined %}
+            window.datas        = JSON.parse('{{ datas | json_encode | raw }}');
+        {% endif %}
     </script>
     {{ encore_entry_link_tags('appScss') }}
 </head>
     <body>
     <div id="vue-app">
-        {# L'appli Vue.js vivra ici #}
     </div>
     {{ encore_entry_script_tags('app') }}
 

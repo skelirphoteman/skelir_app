@@ -1,0 +1,14 @@
+{% extends 'twig/app.html.twig' %}
+
+
+{% block content %}
+
+{{ form_start(form) }}
+    {{ form_row(form.crypto) }}
+    {{ form_row(form.fee) }}
+    {{ form_row(form.buy) }}
+    <input type="submit" value="créer">
+    {{ form_end(form) }}
+
+
+{% endblock %}

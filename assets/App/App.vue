@@ -1,7 +1,15 @@
 
 <template>
   <Header />
-  <Body />
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+      </div>
+      <div class="col-8">
+        <Body />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -15,7 +23,7 @@ export default {
     Header,
     Body: defineAsyncComponent(() =>
         import('./Pages/'+ window.mainComponent+ '.vue')
-    ),
+    )
   },
   props: [
       'compo'
